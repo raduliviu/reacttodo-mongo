@@ -2,7 +2,13 @@ import React from "react";
 
 class CloseTasks extends React.Component {
   render() {
-    return <p>These are the close tasks</p>;
+    return (
+      <div className="doneContainer">
+        <div className="containerTitle">
+        <h3>Closed</h3></div>
+        <div className="tasks"></div>
+      </div>
+    );
   }
 }
 

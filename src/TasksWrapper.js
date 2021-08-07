@@ -6,11 +6,13 @@ import Stats from "./Stats";
 class TasksWrapper extends React.Component {
   render() {
     return (
-      <>
+      <main className="tasksFlex">
+      <div className="tasksWrapper">
         <OpenTasks />
         <CloseTasks />
+        </div>
         <Stats />
-      </>
+      </main>
     );
   }
 }

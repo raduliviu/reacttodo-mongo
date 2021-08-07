@@ -2,7 +2,14 @@ import React from "react";
 
 class OpenTasks extends React.Component {
   render() {
-    return <p>These are the open tasks </p>;
+    return (
+      <div className="openContainer">
+        <div className="containerTitle">
+          <h3>Open</h3>
+        </div>
+        <div className="tasks"></div>
+      </div>
+    );
   }
 }
 
