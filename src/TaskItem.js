@@ -2,8 +2,9 @@ import React from "react";
 
 class TaskItem extends React.Component {
     render() {
-        return 
-            /*<div class="taskItem " key={"task" + index} id={"task" + index}>
+        return(
+        this.props.dividedTasks.map((task, index) => {
+        return (<div class="taskItem " key={"task" + index} id={"task" + index}>
                 <label class="container taskCheck">
                     <input type="checkbox" />
                     {task.title}
@@ -14,9 +15,9 @@ class TaskItem extends React.Component {
                     <div type="button" value="Delete" class="icon delete" onClick={"displayModal" + index}></div>
 
                 </div>
-            </div>*/
-        
-    }
+            </div>
+        )})
+        )}
 }
 
 export default TaskItem;
