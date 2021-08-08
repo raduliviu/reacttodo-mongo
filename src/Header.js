@@ -8,8 +8,8 @@ class Header extends React.Component {
       <h1>Our To-Do-List</h1>
 
       <div className="darkmode">
-          <label for="darkMode">Dark Mode</label>
-          <input type="checkbox" id="darkMode" name="darkMode" value="on" onClick="toggleDarkMode()"/>
+          <label htmlFor="darkMode">Dark Mode</label>
+          <input type="checkbox" id="darkMode" name="darkMode" value="on" />
       </div>
   </header>
     );

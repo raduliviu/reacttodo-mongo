@@ -31,21 +31,14 @@ class TasksWrapper extends React.Component {
         this.handleCreateTask = this.handleCreateTask.bind(this);
     }
 
-    handleCreateTask() {
-      let taskBox = document.getElementById("taskBox");
-      let task = taskBox.value;
+    handleCreateTask(newTask) {
       let toDoX = {
-        title: task,
+        title: newTask,
         done: false
       }
-      if (task === null) {
-          return;
-      } else if (task !== "") {
-          this.state.tasks.push(toDoX)
-      }
+      const tasksUpdate = [...this.state.tasks, toDoX];
+      this.setState({tasks: tasksUpdate});
       console.log(this.state.tasks)
-      taskBox.value = "";
-      this.forceUpdate();
   }
 
     render() {

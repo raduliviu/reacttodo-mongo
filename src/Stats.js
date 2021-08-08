@@ -13,13 +13,13 @@ class Stats extends React.Component {
           <h3>Stats</h3>
         </div>
         <div className="counters">
-          <div class="count">
+          <div className="count">
             <strong>{openTasksLength}</strong> <br /> open Tasks
           </div>
-          <div class="count">
+          <div className="count">
             <strong>{allTasksLength-openTasksLength}</strong> <br /> done Tasks
           </div>
-          <div class="count">
+          <div className="count">
             <strong>{allTasksLength}</strong> <br /> all Tasks
           </div>
         </div>
