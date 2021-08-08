@@ -4,15 +4,15 @@ class TaskItem extends React.Component {
     render() {
         return(
         this.props.dividedTasks.map((task, index) => {
-        return (<div class="taskItem " key={"task" + index} id={"task" + index}>
-                <label class="container taskCheck">
+        return (<div className="taskItem " key={"task" + index} id={"task" + index}>
+                <label className="container taskCheck">
                     <input type="checkbox" />
                     {task.title}
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                 </ label>
-                <div class="buttons">
-                    <div type="button" value="Edit" class="icon edit" onClick={"editTask" + index}></div>
-                    <div type="button" value="Delete" class="icon delete" onClick={"displayModal" + index}></div>
+                <div className="buttons">
+                    <div type="button" value="Edit" className="icon edit" ></div>
+                    <div type="button" value="Delete" className="icon delete" ></div>
 
                 </div>
             </div>
