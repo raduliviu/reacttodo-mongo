@@ -20,6 +20,10 @@ class TasksWrapper extends React.Component {
                 {
                     title: "nothing",
                     done: true
+                },
+                {
+                    title: "something",
+                    done: true
                 }
               ]
 
