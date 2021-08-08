@@ -25,6 +25,13 @@ handleSubmit(event){
 
     render() {
       const openTasks = this.props.tasks.filter(tasks => tasks.done === false);
+      let content
+      if (openTasks.length === 0){
+      content = <div className="noTaskLeft noOpen"></div>
+      } else {
+        content = <TaskItem dividedTasks={openTasks} />
+
+      }
 
         return ( <div className = "openContainer" >
             <div className = "containerTitle" >
@@ -38,8 +45,7 @@ handleSubmit(event){
               </div> 
             </div> 
             <div className = "tasks" >
-            <TaskItem dividedTasks={openTasks} />
-
+            {content}
             </div>
             </div>
         );
