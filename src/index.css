@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
 
 body {
@@ -12,8 +11,6 @@ body {
 header {
     padding: 2rem 2rem 2rem 2rem;
 }
-
-
 
 .done {
     text-decoration: line-through;
@@ -29,21 +26,17 @@ header {
     justify-content: space-between;
 }
 
-.doneContainer,
-.openContainer,
-.statsContainer {
+.doneContainer, .openContainer, .statsContainer {
     padding: 1rem;
     border: 2px solid #518cf2;
     border-radius: 1rem;
 }
 
-.tasksWrapper,
-.statsContainer {
+.tasksWrapper, .statsContainer {
     margin: 2rem;
 }
 
-.openContainer,
-.doneContainer {
+.openContainer, .doneContainer {
     width: 45%;
 }
 
@@ -72,13 +65,11 @@ header {
     margin-bottom: 1.4rem;
 }
 
-.taskItem,
-.count {
+.taskItem, .count {
     padding-top: 1rem;
 }
 
-.taskItem:first-child,
-.count:first-child {
+.taskItem:first-child, .count:first-child {
     padding-top: 0;
 }
 
@@ -118,19 +109,17 @@ header {
     padding-left: 10px;
 }
 
-/*
 .delete {
-background-image: url(./assets/icons/delete_icon.svg);
+    background-image: url(./assets/icons/delete_icon.svg);
 }
 
 .add {
-background-image: url(./assets/icons/add_icon.svg);
+    background-image: url(./assets/icons/add_icon.svg);
 }
 
 .edit {
-background-image: url(./assets/icons/edit_icon.svg);
+    background-image: url(./assets/icons/edit_icon.svg);
 }
-*/
 
 /* The container */
 
@@ -147,7 +136,6 @@ background-image: url(./assets/icons/edit_icon.svg);
     user-select: none;
 }
 
-
 /* Hide the browser's default checkbox */
 
 .container input {
@@ -157,7 +145,6 @@ background-image: url(./assets/icons/edit_icon.svg);
     height: 0;
     width: 0;
 }
-
 
 /* Create a custom checkbox */
 
@@ -172,20 +159,17 @@ background-image: url(./assets/icons/edit_icon.svg);
     border: 2px solid #518cf2;
 }
 
-
 /* On mouse-over, add a grey background color */
 
 .container:hover input~.checkmark {
     background-color: #ccc;
 }
 
-
 /* When the checkbox is checked, add a blue background */
 
 .container input:checked~.checkmark {
     background-color: #518cf2;
 }
-
 
 /* Create the checkmark/indicator (hidden when not checked) */
 
@@ -195,13 +179,11 @@ background-image: url(./assets/icons/edit_icon.svg);
     display: none;
 }
 
-
 /* Show the checkmark when checked */
 
 .container input:checked~.checkmark:after {
     display: block;
 }
-
 
 /* Style the checkmark/indicator */
 
@@ -224,8 +206,7 @@ background-image: url(./assets/icons/edit_icon.svg);
     .statsContainer {
         width: 90%;
     }
-    .tasksWrapper,
-    .statsContainer {
+    .tasksWrapper, .statsContainer {
         margin: auto
     }
     .tasksWrapper {
@@ -242,16 +223,14 @@ background-image: url(./assets/icons/edit_icon.svg);
         justify-content: center;
         align-items: center;
     }
-    .doneContainer,
-    .openContainer {
+    .doneContainer, .openContainer {
         width: 100%;
         box-sizing: border-box;
     }
 }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
-    .doneContainer,
-    .openContainer {
+    .doneContainer, .openContainer {
         width: 44%
     }
     .counters {
