@@ -12,16 +12,18 @@ class OpenTasks extends React.Component {
 
   handleNewTaskInput(event){
 this.setState({newTask: event.target.value})
-  }
+}
 
 handleSubmit(event){
   event.preventDefault();
-  const newTask = event.target.value
+  const newTask = this.state.newTask
   if (!newTask) {
-    return;
-}
+    return;}
   this.props.createTask(this.state.newTask);
+  console.log( event.target.value);
+  this.setState({newTask: ""})
 }
+
 
     render() {
       const openTasks = this.props.tasks.filter(tasks => tasks.done === false);
@@ -39,8 +41,8 @@ handleSubmit(event){
                 Open 
               </h3> 
               <div className="taskForm">
-                <input type="text" id="taskBox" onChange={this.handleNewTaskInput} />
-                <div type="button" className="icon add" id="createTask" onClick={this.handleSubmit}>
+                <input type="text" name="taskBox" id="taskBox" value={this.state.newTask} onChange={this.handleNewTaskInput} />
+                <div type="button" name="taskBox" className="icon add" id="createTask" onClick={this.handleSubmit}>
                 </div>
               </div> 
             </div> 

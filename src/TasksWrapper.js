@@ -32,20 +32,20 @@ class TasksWrapper extends React.Component {
     }
 
     handleCreateTask(newTask) {
+      console.log(this.state.tasks)
       let toDoX = {
         title: newTask,
         done: false
       }
       const tasksUpdate = [...this.state.tasks, toDoX];
       this.setState({tasks: tasksUpdate});
-      console.log(this.state.tasks)
   }
 
     render() {
         return ( 
         < main className = "tasksFlex" >
             <div className = "tasksWrapper" >
-            <OpenTasks tasks={this.state.tasks} createTask={this.handleCreateTask}/>
+            <OpenTasks tasks={this.state.tasks} createTask={this.handleCreateTask} />
             <CloseTasks tasks={this.state.tasks} />
             </div> 
             <Stats tasks={this.state.tasks} />
