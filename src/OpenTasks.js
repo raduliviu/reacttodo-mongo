@@ -9,6 +9,7 @@ class OpenTasks extends React.Component {
     this.state = { newTask: "" };
     this.handleNewTaskInput = this.handleNewTaskInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEnterNewTask = this.handleEnterNewTask.bind(this);
   }
 
   handleNewTaskInput(event) {
@@ -26,6 +27,11 @@ class OpenTasks extends React.Component {
     this.setState({ newTask: "" })
   }
 
+  handleEnterNewTask(event){
+    if(event.key === "Enter"){
+      this.handleSubmit(event)
+    }
+  }
 
   render() {
     const openTasks = this.props.tasks.filter(tasks => tasks.done === false);
@@ -45,7 +51,7 @@ class OpenTasks extends React.Component {
           Open
         </h3>
         <div className="taskForm">
-          <input type="text" name="taskBox" id="taskBox" value={this.state.newTask} onChange={this.handleNewTaskInput} />
+          <input type="text" name="taskBox" id="taskBox" value={this.state.newTask} onChange={this.handleNewTaskInput} onKeyPress={this.handleEnterNewTask} />
           <div type="button" name="taskBox" className="icon add" id="createTask" onClick={this.handleSubmit}>
           </div>
         </div>
