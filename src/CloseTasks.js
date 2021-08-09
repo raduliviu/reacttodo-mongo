@@ -9,7 +9,10 @@ class CloseTasks extends React.Component {
         <div className="containerTitle">
           <h3>Closed</h3></div>
         <div className="tasks">
-          <TaskItem dividedTasks={closeTasks} />
+          <TaskItem 
+            dividedTasks={closeTasks} 
+            handleTaskToggle={this.props.handleTaskToggle}
+          />
         </div>
       </div>
     );
