@@ -11,22 +11,22 @@ class TasksWrapper extends React.Component {
             tasks: [
                 {
                     title: "do something",
-                    done: false,
+                    done: true,
                     id: 0
                 },
                 {
                     title: "anything",
-                    done: false,
+                    done: true,
                     id: 1
                 },
                 {
                     title: "nothing",
-                    done: true,
+                    done: false,
                     id: 2
                 },
                 {
                     title: "something",
-                    done: true,
+                    done: false,
                     id: 3
                 },
                 {
