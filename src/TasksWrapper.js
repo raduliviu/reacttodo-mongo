@@ -39,6 +39,7 @@ class TasksWrapper extends React.Component {
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
         this.handleTaskToggle = this.handleTaskToggle.bind(this);
+     //   this.handleDeleteTask = this.handleDeleteTask.bind(this);
     }
 
     handleCreateTask(newTask) {
@@ -64,9 +65,20 @@ class TasksWrapper extends React.Component {
         this.setState({ tasks: newTodos });
     }
 
-    handleDeleteTask(targetTask){
+  //  handleDeleteTask(id){
+  //      const newTodos = this.state.tasks.map((todo) => {
+  //          if (todo.id !== id){
+  //              return todo;
+  //          }
 
-    }
+  //          if (todo[todo.index].id !== id){
+  //              return const indexOfTodo = todo.index
+  //          }
+            
+  //          const newTodosObj = todo.splice(indexOfTodo, 1)
+  //      })
+  //      toDos = toDos.filter(toDo => toDo)
+  //  }
 
     render() {
         return (
@@ -76,6 +88,7 @@ class TasksWrapper extends React.Component {
                         tasks={this.state.tasks}
                         createTask={this.handleCreateTask}
                         handleTaskToggle={this.handleTaskToggle}
+                        handleDeleteTask={this.handleDeleteTask}
                     />
                     <CloseTasks
                         tasks={this.state.tasks}

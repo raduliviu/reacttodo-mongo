@@ -1,6 +1,11 @@
 import React from "react";
+import DeleteModal from "./DeleteModal"
 
 class TaskItem extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
     render() {
         return (
             this.props.dividedTasks.map((task) => {
@@ -22,8 +27,10 @@ class TaskItem extends React.Component {
                         {
                             task.done ? '' : <div type="button" value="Edit" className="icon edit" ></div>
                         }
-                        <div type="button" value="Delete" className="icon delete"  ></div>
+                        <DeleteModal 
+                        id="modal"
 
+                    />
                     </div>
                 </div>
                 )

@@ -3,11 +3,18 @@ import React from "react";
 class DeleteModal extends React.Component {
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {visible: false};
+        this.ToggleDisplayModal = this.ToggleDisplayModal.bind(this);
+    }
+
+    ToggleDisplayModal(modal){
+        this.setState({visible: !this.state.visible})
     }
 
     render() {
         return (
+        <div>
+            <div type="button" value="Delete" className="icon delete" onClick="" ></div>
             <div id="deleteTaskModal" className="modal">
             <span  className="close" title="Close Modal">×</span>
             <div className="modalContent">
@@ -16,6 +23,8 @@ class DeleteModal extends React.Component {
                 <button className="confirmbtn" id="confirm">Confirm</button>
             </div>
         </div>
+        </div>
+
         )
     }
 }
