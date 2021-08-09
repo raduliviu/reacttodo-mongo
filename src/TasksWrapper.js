@@ -11,45 +11,75 @@ class TasksWrapper extends React.Component {
             tasks: [
                 {
                     title: "do something",
-                    done: false
+                    done: false,
+                    id: 0
                 },
                 {
                     title: "anything",
-                    done: false
+                    done: false,
+                    id: 1
                 },
                 {
                     title: "nothing",
-                    done: true
+                    done: true,
+                    id: 2
                 },
                 {
                     title: "something",
-                    done: true
+                    done: true,
+                    id: 3
+                },
+                {
+                    title: "new one",
+                    done: false,
+                    id: 4
                 }
-              ]
+            ]
 
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
+        this.handleTaskToggle = this.handleTaskToggle.bind(this);
     }
 
     handleCreateTask(newTask) {
-      console.log(this.state.tasks)
-      let toDoX = {
-        title: newTask,
-        done: false
-      }
-      const tasksUpdate = [...this.state.tasks, toDoX];
-      this.setState({tasks: tasksUpdate});
-  }
+        let toDoX = {
+            title: newTask,
+            done: false,
+            id: this.state.tasks.length
+        }
+        const tasksUpdate = [...this.state.tasks, toDoX];
+        this.setState({ tasks: tasksUpdate });
+        console.log(this.state.tasks)
+    }
+
+    handleTaskToggle(id) {
+        const newTodos = this.state.tasks.map((todo) => {
+            if (todo.id !== id) {
+                return todo;
+            }
+
+            const newTodosObj = { ...todo, done: !todo.done };
+            return newTodosObj;
+        });
+        this.setState({ tasks: newTodos });
+    }
 
     render() {
-        return ( 
-        < main className = "tasksFlex" >
-            <div className = "tasksWrapper" >
-            <OpenTasks tasks={this.state.tasks} createTask={this.handleCreateTask} />
-            <CloseTasks tasks={this.state.tasks} />
-            </div> 
-            <Stats tasks={this.state.tasks} />
-        </main>
+        return (
+            < main className="tasksFlex" >
+                <div className="tasksWrapper" >
+                    <OpenTasks
+                        tasks={this.state.tasks}
+                        createTask={this.handleCreateTask}
+                        handleTaskToggle={this.handleTaskToggle}
+                    />
+                    <CloseTasks
+                        tasks={this.state.tasks}
+                        handleTaskToggle={this.handleTaskToggle}
+                    />
+                </div>
+                <Stats tasks={this.state.tasks} />
+            </main>
         );
     }
 }
