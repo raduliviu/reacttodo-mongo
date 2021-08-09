@@ -64,6 +64,10 @@ class TasksWrapper extends React.Component {
         this.setState({ tasks: newTodos });
     }
 
+    handleDeleteTask(targetTask){
+
+    }
+
     render() {
         return (
             < main className="tasksFlex" >

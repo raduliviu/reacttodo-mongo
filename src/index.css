@@ -26,17 +26,21 @@ header {
     justify-content: space-between;
 }
 
-.doneContainer, .openContainer, .statsContainer {
+.doneContainer,
+.openContainer,
+.statsContainer {
     padding: 1rem;
     border: 2px solid #518cf2;
     border-radius: 1rem;
 }
 
-.tasksWrapper, .statsContainer {
+.tasksWrapper,
+.statsContainer {
     margin: 2rem;
 }
 
-.openContainer, .doneContainer {
+.openContainer,
+.doneContainer {
     width: 45%;
 }
 
@@ -65,11 +69,13 @@ header {
     margin-bottom: 1.4rem;
 }
 
-.taskItem, .count {
+.taskItem,
+.count {
     padding-top: 1rem;
 }
 
-.taskItem:first-child, .count:first-child {
+.taskItem:first-child,
+.count:first-child {
     padding-top: 0;
 }
 
@@ -121,6 +127,7 @@ header {
     background-image: url(./assets/icons/edit_icon.svg);
 }
 
+
 /* The container */
 
 .container {
@@ -136,6 +143,7 @@ header {
     user-select: none;
 }
 
+
 /* Hide the browser's default checkbox */
 
 .container input {
@@ -145,6 +153,7 @@ header {
     height: 0;
     width: 0;
 }
+
 
 /* Create a custom checkbox */
 
@@ -159,17 +168,20 @@ header {
     border: 2px solid #518cf2;
 }
 
+
 /* On mouse-over, add a grey background color */
 
 .container:hover input~.checkmark {
     background-color: #ccc;
 }
 
+
 /* When the checkbox is checked, add a blue background */
 
 .container input:checked~.checkmark {
     background-color: #518cf2;
 }
+
 
 /* Create the checkmark/indicator (hidden when not checked) */
 
@@ -179,11 +191,13 @@ header {
     display: none;
 }
 
+
 /* Show the checkmark when checked */
 
 .container input:checked~.checkmark:after {
     display: block;
 }
+
 
 /* Style the checkmark/indicator */
 
@@ -206,7 +220,8 @@ header {
     .statsContainer {
         width: 90%;
     }
-    .tasksWrapper, .statsContainer {
+    .tasksWrapper,
+    .statsContainer {
         margin: auto
     }
     .tasksWrapper {
@@ -223,14 +238,16 @@ header {
         justify-content: center;
         align-items: center;
     }
-    .doneContainer, .openContainer {
+    .doneContainer,
+    .openContainer {
         width: 100%;
         box-sizing: border-box;
     }
 }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
-    .doneContainer, .openContainer {
+    .doneContainer,
+    .openContainer {
         width: 44%
     }
     .counters {
@@ -269,4 +286,86 @@ header {
 
 .noClosed {
     background-image: url(./assets/thumbs_down.jpg);
+}
+
+
+/* Modal Window */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    padding: 2rem;
+    text-align: center;
+}
+
+
+/* The Modal Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+.cancelbtn,
+.confirmbtn {
+    padding: 1rem 2rem;
+    border: 0;
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    background-color: #ccc;
+    color: black;
+}
+
+.confirmbtn {
+    background-color: #f44336;
+}
+
+.cancelbtn:hover,
+.confirmbtn:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+@media screen and (max-width: 378px) {
+    .cancelbtn,
+    .confirmbtn {
+        width: 100%;
+        margin-bottom: 2rem;
+        padding: 2rem 4rem;
+    }
 }
