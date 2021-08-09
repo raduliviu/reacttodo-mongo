@@ -1,3 +1,4 @@
+
 import React from "react";
 import TaskItem from "./TaskItem";
 
@@ -16,15 +17,27 @@ class OpenTasks extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const newTask = event.target.value
+    const newTask = this.state.newTask
     if (!newTask) {
       return;
     }
     this.props.createTask(this.state.newTask);
+    console.log(event.target.value);
+    this.setState({ newTask: "" })
   }
+
 
   render() {
     const openTasks = this.props.tasks.filter(tasks => tasks.done === false);
+    let content
+    if (openTasks.length === 0) {
+      content = <div className="noTaskLeft noOpen"></div>
+    } else {
+      content = <TaskItem
+        dividedTasks={openTasks}
+        handleTaskToggle={this.props.handleTaskToggle} />
+
+    }
 
     return (<div className="openContainer" >
       <div className="containerTitle" >
@@ -32,17 +45,13 @@ class OpenTasks extends React.Component {
           Open
         </h3>
         <div className="taskForm">
-          <input type="text" id="taskBox" onChange={this.handleNewTaskInput} />
-          <div type="button" className="icon add" id="createTask" onClick={this.handleSubmit}>
+          <input type="text" name="taskBox" id="taskBox" value={this.state.newTask} onChange={this.handleNewTaskInput} />
+          <div type="button" name="taskBox" className="icon add" id="createTask" onClick={this.handleSubmit}>
           </div>
         </div>
       </div>
       <div className="tasks" >
-        <TaskItem
-          dividedTasks={openTasks}
-          handleTaskToggle={this.props.handleTaskToggle}
-        />
-
+        {content}
       </div>
     </div>
     );
