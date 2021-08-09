@@ -9,36 +9,47 @@ class TasksWrapper extends React.Component {
         super(props);
         this.state = {
             tasks: [
-                {
-                    title: "do something",
-                    done: true,
-                    id: 0
-                },
-                {
-                    title: "anything",
-                    done: true,
-                    id: 1
-                },
-                {
-                    title: "nothing",
-                    done: false,
-                    id: 2
-                },
-                {
-                    title: "something",
-                    done: false,
-                    id: 3
-                },
-                {
-                    title: "new one",
-                    done: false,
-                    id: 4
-                }
+                // {
+                //     title: "do something",
+                //     done: true,
+                //     id: 0
+                // },
+                // {
+                //     title: "anything",
+                //     done: true,
+                //     id: 1
+                // },
+                // {
+                //     title: "nothing",
+                //     done: false,
+                //     id: 2
+                // },
+                // {
+                //     title: "something",
+                //     done: false,
+                //     id: 3
+                // },
+                // {
+                //     title: "new one",
+                //     done: false,
+                //     id: 4
+                // }
             ]
 
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
         this.handleTaskToggle = this.handleTaskToggle.bind(this);
+    }
+
+    componentDidMount() {
+        const storedData = localStorage.getItem("toDoTasks")
+        if (storedData) {
+            this.setState({tasks: JSON.parse(storedData)})
+        }
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('toDoTasks', JSON.stringify(this.state.tasks))
     }
 
     handleCreateTask(newTask) {
