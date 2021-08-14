@@ -7,9 +7,9 @@ class Header extends React.Component {
       <header>
       <h1>Our To-Do-List</h1>
 
-      <div className="darkmode">
+      <div>
           <label htmlFor="darkMode">Dark Mode</label>
-          <input type="checkbox" id="darkMode" name="darkMode" value="on" />
+          <input className="checkDarkMode" type="checkbox" defaultChecked={this.props.checked} id="darkMode" name="darkMode"  onClick={this.props.handleDarkMode}/>
       </div>
   </header>
     );

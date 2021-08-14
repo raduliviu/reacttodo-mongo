@@ -47,16 +47,7 @@ class TasksWrapper extends React.Component {
     localStorage.setItem("toDoTasks", JSON.stringify(this.state.tasks));
   }
 
-  handleCreateTask(newTask) {
-    let toDoX = {
-      title: newTask,
-      done: false,
-      id: this.state.tasks.length,
-    };
-    const tasksUpdate = [...this.state.tasks, toDoX];
-    this.setState({ tasks: tasksUpdate });
-    console.log(this.state.tasks);
-  }
+ 
 
   handleDeleteTask(targetTask) {}
 
