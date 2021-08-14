@@ -20,7 +20,7 @@ class DeleteModal extends React.Component {
 
     render() {
         return (
-            <div className="taskItem">
+            <div className="taskItem deleteContainer">
             <form onSubmit={this.handleSubmit} >
               <label className="container">
                 Are you sure?
