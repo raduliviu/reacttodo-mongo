@@ -8,38 +8,23 @@ class TasksWrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: [
-                {
-                    title: "do something",
-                    done: false,
-                    id: 0
-                },
-                {
-                    title: "anything",
-                    done: false,
-                    id: 1
-                },
-                {
-                    title: "nothing",
-                    done: true,
-                    id: 2
-                },
-                {
-                    title: "something",
-                    done: true,
-                    id: 3
-                },
-                {
-                    title: "new one",
-                    done: false,
-                    id: 4
-                }
-            ]
+            tasks: []
 
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
         this.handleTaskToggle = this.handleTaskToggle.bind(this);
      //   this.handleDeleteTask = this.handleDeleteTask.bind(this);
+    }
+
+    componentDidMount() {
+        const storedData = localStorage.getItem("toDoTasks")
+        if (storedData) {
+            this.setState({tasks: JSON.parse(storedData)})
+        }
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('toDoTasks', JSON.stringify(this.state.tasks))
     }
 
     handleCreateTask(newTask) {
