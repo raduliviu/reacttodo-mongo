@@ -30,6 +30,7 @@ class TasksApp extends React.Component {
     if (this.state.darkMode) {
       darkMode = "darkMode";
     }
+    console.log("renderingwithdarkmode " + this.state.darkMode)
     return (
       <div className={darkMode}>
         <Header
