@@ -161,6 +161,7 @@ header {
     cursor: pointer;
     height: 0;
     width: 0;
+
 }
 
 
@@ -175,6 +176,7 @@ header {
     background-color: #eee;
     border-radius: 1rem;
     border: 2px solid #518cf2;
+
 }
 
 
@@ -283,11 +285,15 @@ header {
 .darkMode {
     color: #eee;
     background: #121212;
+    min-height: 600px;
 }
 
 .darkMode a {
     color: #809fff
 }
+
+.checkDarkMode{
+    margin-left: 20px;}
 
 .noTaskLeft {
     max-width: 100%;
