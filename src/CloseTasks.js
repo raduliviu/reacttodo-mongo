@@ -10,7 +10,10 @@ class CloseTasks extends React.Component {
     } else {
       content = <TaskItem
         dividedTasks={closeTasks}
-        handleTaskToggle={this.props.handleTaskToggle} />
+        taskDeleteMode={this.props.taskInDelete}
+        handleTaskToggle={this.props.handleTaskToggle}
+        handleDeleteTask={this.props.handleDeleteTask} 
+        handleToggleDeleteMode={this.props.handleToggleDeleteMode} />
 
     }
     return (<div className="doneContainer" >
@@ -18,10 +21,6 @@ class CloseTasks extends React.Component {
         <h3 >
           Closed
         </h3>
-        <div className="taskForm">
-          <div type="button" name="taskBox" className="icon add" id="createTask" onClick={this.handleSubmit}>
-          </div>
-        </div>
       </div>
       <div className="tasks" >
         {content}

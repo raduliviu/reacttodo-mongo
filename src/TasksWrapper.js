@@ -8,12 +8,13 @@ class TasksWrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: []
-
+            tasks: [],
+            taskDeleteMode: null
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
         this.handleTaskToggle = this.handleTaskToggle.bind(this);
-     //   this.handleDeleteTask = this.handleDeleteTask.bind(this);
+        this.handleDeleteTask = this.handleDeleteTask.bind(this);
+        this.handleToggleDeleteMode = this.handleToggleDeleteMode.bind(this);
     }
 
     componentDidMount() {
@@ -50,20 +51,19 @@ class TasksWrapper extends React.Component {
         this.setState({ tasks: newTodos });
     }
 
-  //  handleDeleteTask(id){
-  //      const newTodos = this.state.tasks.map((todo) => {
-  //          if (todo.id !== id){
-  //              return todo;
-  //          }
+// Handle Delete Stuff
 
-  //          if (todo[todo.index].id !== id){
-  //              return const indexOfTodo = todo.index
-  //          }
-            
-  //          const newTodosObj = todo.splice(indexOfTodo, 1)
-  //      })
-  //      toDos = toDos.filter(toDo => toDo)
-  //  }
+  handleDeleteTask(id) {
+    const newTodos = this.state.tasks.filter((task) => task.id !== id);
+    this.setState({ tasks: newTodos, taskDeleteMode: null });
+  }
+
+  handleToggleDeleteMode(id){
+      this.setState({taskDeleteMode: id})
+  }
+
+
+// Handle Delete Stuff
 
     render() {
         return (
@@ -71,13 +71,18 @@ class TasksWrapper extends React.Component {
                 <div className="tasksWrapper" >
                     <OpenTasks
                         tasks={this.state.tasks}
+                        taskInDelete={this.state.taskDeleteMode}
                         createTask={this.handleCreateTask}
                         handleTaskToggle={this.handleTaskToggle}
                         handleDeleteTask={this.handleDeleteTask}
+                        handleToggleDeleteMode={this.handleToggleDeleteMode}
                     />
                     <CloseTasks
                         tasks={this.state.tasks}
+                        taskInDelete={this.state.taskDeleteMode}
                         handleTaskToggle={this.handleTaskToggle}
+                        handleDeleteTask={this.handleDeleteTask}
+                        handleToggleDeleteMode={this.handleToggleDeleteMode}
                     />
                 </div>
                 <Stats tasks={this.state.tasks} />

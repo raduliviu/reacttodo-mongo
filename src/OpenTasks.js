@@ -6,7 +6,9 @@ import TaskItem from "./TaskItem";
 class OpenTasks extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { newTask: "" };
+    this.state = { 
+      newTask: "",
+      inDelete: null };
     this.handleNewTaskInput = this.handleNewTaskInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEnterNewTask = this.handleEnterNewTask.bind(this);
@@ -41,8 +43,11 @@ class OpenTasks extends React.Component {
     } else {
       content = <TaskItem
         dividedTasks={openTasks}
-        handleTaskToggle={this.props.handleTaskToggle} />
-
+        taskDeleteMode={this.props.taskInDelete}
+        handleTaskToggle={this.props.handleTaskToggle}
+        handleDeleteTask={this.props.handleDeleteTask} 
+        handleToggleDeleteMode={this.props.handleToggleDeleteMode}
+        />
     }
 
     return (<div className="openContainer" >
