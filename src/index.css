@@ -127,6 +127,15 @@ header {
     background-image: url(./assets/icons/edit_icon.svg);
 }
 
+.abort {
+    background-image: url(./assets/icons/abort_icon.svg);
+}
+
+.save {
+    background-image: url(./assets/icons/save_icon.svg);
+}
+
+
 
 /* The container */
 
@@ -259,6 +268,20 @@ header {
     }
 }
 
+.editWrapper {
+    display: flex;
+}
+
+.editWrapper>div>input {
+    border-radius: 1.5rem;
+    border: solid 1px #518cf2;
+    padding: 0.2rem 1rem;
+    margin-right: 1rem;
+    width: 55%;
+    outline: none;
+    font-size: 18px;
+}
+
 .darkMode {
     color: #eee;
     background: #121212;
@@ -298,8 +321,6 @@ header {
 /* Modal Window */
 
 .modal {
-    display: none;
-    /* Hidden by default */
     position: fixed;
     /* Stay in place */
     z-index: 1;
