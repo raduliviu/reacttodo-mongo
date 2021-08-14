@@ -8,33 +8,7 @@ class TasksWrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: [
-                // {
-                //     title: "do something",
-                //     done: true,
-                //     id: 0
-                // },
-                // {
-                //     title: "anything",
-                //     done: true,
-                //     id: 1
-                // },
-                // {
-                //     title: "nothing",
-                //     done: false,
-                //     id: 2
-                // },
-                // {
-                //     title: "something",
-                //     done: false,
-                //     id: 3
-                // },
-                // {
-                //     title: "new one",
-                //     done: false,
-                //     id: 4
-                // }
-            ]
+            tasks: []
 
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
