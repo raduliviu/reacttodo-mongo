@@ -20,16 +20,15 @@ class DeleteModal extends React.Component {
 
     render() {
         return (
-            <div>
-            <form onSubmit={this.handleSubmit} className="taskItem">
+            <div className="taskItem">
+            <form onSubmit={this.handleSubmit} >
               <label className="container">
                 Are you sure?
               </label>
               <div className="buttons">
-              <input type="submit" value="Delete" />
-              <button onClick={() => this.props.handleDeleteTask(null)}>
-                Cancel
-              </button>
+              <button className="icon" type="submit" value="Delete">Delete</button>
+              <div onClick={() => this.props.handleDeleteTask(null)} className="icon abort">
+              </div>
               </div>
             </form>
           </div>

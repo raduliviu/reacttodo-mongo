@@ -2,12 +2,6 @@ import React from "react";
 import DeleteModal from "./DeleteModal"
 
 class TaskItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-
-
     render() {
         let taskItem
         if (this.props.taskdata.id == this.props.taskDeleteMode) {
