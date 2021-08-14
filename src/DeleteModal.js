@@ -26,7 +26,7 @@ class DeleteModal extends React.Component {
                 Are you sure?
               </label>
               <div className="buttons">
-              <input className="icon" type="submit" value="Delete" />
+              <button className="icon" type="submit" value="Delete">Delete</button>
               <div onClick={() => this.props.handleDeleteTask(null)} className="icon abort">
               </div>
               </div>

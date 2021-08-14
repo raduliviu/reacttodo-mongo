@@ -59,10 +59,6 @@ header {
     justify-content: space-between;
 }
 
-.taskItem button {
-    align-self: flex-end;
-}
-
 .tasksFlex>div>h3 {
     padding-bottom: 1rem;
     border-bottom: 2px solid #518cf2;
@@ -89,9 +85,10 @@ header {
     margin-left: 1rem;
 }
 
+button,
 input[type="submit"] {
     font-size: 1rem;
-    width: fit-content;
+    width: fit-content !important;
     color: #518cf2;
     border-color: #518cf2;
     border-radius: 0.8rem;
@@ -174,7 +171,6 @@ div.taskItem form {
     cursor: pointer;
     height: 0;
     width: 0;
-
 }
 
 
@@ -189,7 +185,6 @@ div.taskItem form {
     background-color: #eee;
     border-radius: 1rem;
     border: 2px solid #518cf2;
-
 }
 
 
@@ -305,8 +300,9 @@ div.taskItem form {
     color: #809fff
 }
 
-.checkDarkMode{
-    margin-left: 20px;}
+.checkDarkMode {
+    margin-left: 20px;
+}
 
 .noTaskLeft {
     max-width: 100%;
