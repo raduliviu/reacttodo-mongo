@@ -8,9 +8,18 @@ class CloseTasks extends React.Component {
     if (closeTasks.length === 0) {
       content = <div className="noTaskLeft noClosed"></div>
     } else {
-      content = <TaskItem
-        dividedTasks={closeTasks}
-        handleTaskToggle={this.props.handleTaskToggle} />
+      content = closeTasks.map((task) => {
+        return (
+          <TaskItem
+            taskdata={task}
+            taskDeleteMode={this.props.taskInDelete}
+            handleTaskToggle={this.props.handleTaskToggle}
+            handleDeleteTask={this.props.handleDeleteTask} 
+            handleToggleDeleteMode={this.props.handleToggleDeleteMode} 
+            key={task.id} 
+          />
+        )
+      })
 
     }
     return (<div className="doneContainer" >
@@ -18,10 +27,6 @@ class CloseTasks extends React.Component {
         <h3 >
           Closed
         </h3>
-        <div className="taskForm">
-          <div type="button" name="taskBox" className="icon add" id="createTask" onClick={this.handleSubmit}>
-          </div>
-        </div>
       </div>
       <div className="tasks" >
         {content}

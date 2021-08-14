@@ -1,12 +1,15 @@
 
 import React from "react";
 import TaskItem from "./TaskItem";
+import EditTask from "./EditTask"
 
 
 class OpenTasks extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { newTask: "" };
+    this.state = { 
+      newTask: "",
+      inDelete: null };
     this.handleNewTaskInput = this.handleNewTaskInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEnterNewTask = this.handleEnterNewTask.bind(this);
@@ -39,10 +42,32 @@ class OpenTasks extends React.Component {
     if (openTasks.length === 0) {
       content = <div className="noTaskLeft noOpen"></div>
     } else {
-      content = <TaskItem
-        dividedTasks={openTasks}
-        handleTaskToggle={this.props.handleTaskToggle} />
-
+      content = openTasks.map((task) => {
+          if (task.id === this.props.taskInEdit) {
+            return (
+              <EditTask
+                taskdata={task}
+                handleTaskToggle={this.props.handleTaskToggle}
+                handleTaskInEdit={this.props.handleTaskInEdit}
+                handleEditTask={this.props.handleEditTask}
+                key={task.id}
+              />
+            )
+          }
+          return (
+            <TaskItem
+              taskdata={task}
+              handleTaskToggle={this.props.handleTaskToggle}
+              handleTaskInEdit={this.props.handleTaskInEdit}
+              handleEditTask={this.props.handleEditTask}
+              key={task.id}
+              taskDeleteMode={this.props.taskInDelete}
+              handleDeleteTask={this.props.handleDeleteTask} 
+              handleToggleDeleteMode={this.props.handleToggleDeleteMode}
+            />
+          )
+        }
+      )
     }
 
     return (<div className="openContainer" >
