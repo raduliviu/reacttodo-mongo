@@ -1,6 +1,7 @@
 
 import React from "react";
 import TaskItem from "./TaskItem";
+import EditTask from "./EditTask"
 
 
 class OpenTasks extends React.Component {
@@ -39,10 +40,29 @@ class OpenTasks extends React.Component {
     if (openTasks.length === 0) {
       content = <div className="noTaskLeft noOpen"></div>
     } else {
-      content = <TaskItem
-        dividedTasks={openTasks}
-        handleTaskToggle={this.props.handleTaskToggle} />
-
+      content = openTasks.map((task) => {
+          if (task.id === this.props.taskInEdit) {
+            return (
+              <EditTask
+                taskdata={task}
+                handleTaskToggle={this.props.handleTaskToggle}
+                handleTaskInEdit={this.props.handleTaskInEdit}
+                handleEditTask={this.props.handleEditTask}
+                key={task.id}
+              />
+            )
+          }
+          return (
+            <TaskItem
+              taskdata={task}
+              handleTaskToggle={this.props.handleTaskToggle}
+              handleTaskInEdit={this.props.handleTaskInEdit}
+              handleEditTask={this.props.handleEditTask}
+              key={task.id}
+            />
+          )
+        }
+      )
     }
 
     return (<div className="openContainer" >
