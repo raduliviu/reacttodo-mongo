@@ -27,6 +27,7 @@ class TaskItem extends React.Component {
                         {
                             task.done ? '' : <div type="button" value="Edit" className="icon edit" ></div>
                         }
+                        <div type="button" value="Delete" className="icon delete" onClick="" ></div>
                         <DeleteModal 
                         id="modal"
 
