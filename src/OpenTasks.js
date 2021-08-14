@@ -1,6 +1,7 @@
 
 import React from "react";
 import TaskItem from "./TaskItem";
+import EditTask from "./EditTask"
 
 
 class OpenTasks extends React.Component {
@@ -41,13 +42,32 @@ class OpenTasks extends React.Component {
     if (openTasks.length === 0) {
       content = <div className="noTaskLeft noOpen"></div>
     } else {
-      content = <TaskItem
-        dividedTasks={openTasks}
-        taskDeleteMode={this.props.taskInDelete}
-        handleTaskToggle={this.props.handleTaskToggle}
-        handleDeleteTask={this.props.handleDeleteTask} 
-        handleToggleDeleteMode={this.props.handleToggleDeleteMode}
-        />
+      content = openTasks.map((task) => {
+          if (task.id === this.props.taskInEdit) {
+            return (
+              <EditTask
+                taskdata={task}
+                handleTaskToggle={this.props.handleTaskToggle}
+                handleTaskInEdit={this.props.handleTaskInEdit}
+                handleEditTask={this.props.handleEditTask}
+                key={task.id}
+              />
+            )
+          }
+          return (
+            <TaskItem
+              taskdata={task}
+              handleTaskToggle={this.props.handleTaskToggle}
+              handleTaskInEdit={this.props.handleTaskInEdit}
+              handleEditTask={this.props.handleEditTask}
+              key={task.id}
+              taskDeleteMode={this.props.taskInDelete}
+              handleDeleteTask={this.props.handleDeleteTask} 
+              handleToggleDeleteMode={this.props.handleToggleDeleteMode}
+            />
+          )
+        }
+      )
     }
 
     return (<div className="openContainer" >

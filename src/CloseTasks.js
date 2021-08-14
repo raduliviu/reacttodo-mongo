@@ -8,12 +8,18 @@ class CloseTasks extends React.Component {
     if (closeTasks.length === 0) {
       content = <div className="noTaskLeft noClosed"></div>
     } else {
-      content = <TaskItem
-        dividedTasks={closeTasks}
-        taskDeleteMode={this.props.taskInDelete}
-        handleTaskToggle={this.props.handleTaskToggle}
-        handleDeleteTask={this.props.handleDeleteTask} 
-        handleToggleDeleteMode={this.props.handleToggleDeleteMode} />
+      content = closeTasks.map((task) => {
+        return (
+          <TaskItem
+            taskdata={task}
+            taskDeleteMode={this.props.taskInDelete}
+            handleTaskToggle={this.props.handleTaskToggle}
+            handleDeleteTask={this.props.handleDeleteTask} 
+            handleToggleDeleteMode={this.props.handleToggleDeleteMode} 
+            key={task.id} 
+          />
+        )
+      })
 
     }
     return (<div className="doneContainer" >
