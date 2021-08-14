@@ -2,7 +2,6 @@ import React from "react";
 import OpenTasks from "./OpenTasks";
 import CloseTasks from "./CloseTasks";
 import Stats from "./Stats";
-// import EditTask from "./EditTask";
 
 class TasksWrapper extends React.Component {
 
