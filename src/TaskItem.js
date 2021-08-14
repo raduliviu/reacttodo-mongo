@@ -4,7 +4,7 @@ import DeleteModal from "./DeleteModal"
 class TaskItem extends React.Component {
     render() {
         let taskItem
-        if (this.props.taskdata.id == this.props.taskDeleteMode) {
+        if (this.props.taskdata.id === this.props.taskDeleteMode) {
            taskItem = <DeleteModal
                             handleDeleteTask={this.props.handleDeleteTask}
                             currentTaskId={this.props.taskdata.id}
