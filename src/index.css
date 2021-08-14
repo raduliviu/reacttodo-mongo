@@ -48,6 +48,7 @@ header {
     width: 20%;
     text-align: center;
     box-sizing: border-box;
+    margin-bottom: 2rem;
 }
 
 .counters {
@@ -57,6 +58,8 @@ header {
 .taskItem {
     display: flex;
     justify-content: space-between;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .tasksFlex>div>h3 {
@@ -153,7 +156,6 @@ div.taskItem form {
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -241,7 +243,9 @@ div.taskItem form {
     }
     .tasksWrapper,
     .statsContainer {
-        margin: auto
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
     }
     .tasksWrapper {
         width: 90%;
@@ -291,9 +295,9 @@ div.taskItem form {
 }
 
 .darkMode {
+    min-height: 100vh;
     color: #eee;
     background: #121212;
-    min-height: 600px;
 }
 
 .darkMode a {
