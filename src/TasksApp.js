@@ -20,10 +20,7 @@ class TasksApp extends React.Component {
     let darkModeStorage = (window.localStorage.getItem("darkMode") === "true")
     console.log(darkModeStorage)
       this.setState({ darkMode: darkModeStorage });
-    
   }
-
-  
 
   render() {
     let darkMode = "";

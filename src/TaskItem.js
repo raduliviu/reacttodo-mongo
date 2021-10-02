@@ -8,7 +8,7 @@ class TaskItem extends React.Component {
            taskItem = <DeleteModal
                             handleDeleteTask={this.props.handleDeleteTask}
                             currentTaskId={this.props.taskdata.id}
-                            currentTaskTitle={this.props.taskdata.title}
+                            currentTaskTitle={this.props.taskdata.value}
                             key={this.props.taskdata.id}
                             handleToggleDeleteMode={this.props.handleToggleDeleteMode}
                         />
@@ -26,7 +26,7 @@ class TaskItem extends React.Component {
                             }}
                         defaultChecked={this.props.taskdata.done}
                     />
-                    {this.props.taskdata.title}
+                    {this.props.taskdata.value}
                     <span className="checkmark"></span>
                 </ label>
                 <div className="buttons">

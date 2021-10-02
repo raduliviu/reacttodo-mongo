@@ -11,7 +11,6 @@ class TasksWrapper extends React.Component {
             taskInEdit: null,
             tasks: [],
             taskDeleteMode: null
-
         }
         this.handleCreateTask = this.handleCreateTask.bind(this);
         this.handleTaskToggle = this.handleTaskToggle.bind(this);
@@ -21,10 +20,11 @@ class TasksWrapper extends React.Component {
         this.handleToggleDeleteMode = this.handleToggleDeleteMode.bind(this);
     }
 
-    componentDidMount() {
-        const storedData = localStorage.getItem("toDoTasks")
-        if (storedData) {
-            this.setState({tasks: JSON.parse(storedData)})
+    async componentDidMount() {
+        const response = await fetch('https://radu-todo-mongo.herokuapp.com/task')
+        if (response) {
+            this.setState({tasks: await response.json()})
+            console.log(this.state.tasks)
         }
     }
 
@@ -34,7 +34,7 @@ class TasksWrapper extends React.Component {
 
     handleCreateTask(newTask) {
         let toDoX = {
-            title: newTask,
+            value: newTask,
             done: false,
             id: Date.now()
         }
@@ -54,7 +54,7 @@ class TasksWrapper extends React.Component {
           }
           return {
             ...task,
-            title: taskData.title,
+            value: taskData.value,
           };
         });
         this.setState({ tasks: newTasks, taskInEdit: null });
